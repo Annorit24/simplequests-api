@@ -17,7 +17,7 @@ public abstract class SimpleQuestsAPI {
     /**
      * Instance of the bukkit java plugin
      */
-    private JavaPlugin javaPlugin;
+    protected JavaPlugin javaPlugin;
 
     /**
      * Constructor
