@@ -1,6 +1,7 @@
 package xyz.annorit24.simplequestsapi;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import xyz.annorit24.simplequestsapi.client.ClientManager;
 
 /**
  * @author Annorit24
@@ -46,4 +47,10 @@ public abstract class SimpleQuestsAPI {
         instance = apiImplementation;
     }
 
+    /**
+     * Get the client manager use to interact with clients data
+     *
+     * @return client manager
+     */
+    public abstract ClientManager getClientManager();
 }
