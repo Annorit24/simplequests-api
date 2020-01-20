@@ -92,7 +92,7 @@ public abstract class Client {
     /**
      * Private constructor use by {@link #getDefaultClient(Player)}
      */
-    private Client(){
+    protected Client(){
         instance = this;
     }
 
