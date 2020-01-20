@@ -69,11 +69,31 @@ public abstract class Client {
     public abstract void removeQuestDone(String questId);
 
     /**
+     * create default client when creating a new account in the database
+     *
+     * @param player player which need a new account
+     * @return Client object with default values
+     */
+    public abstract Client createClient(Player player);
+
+    /**
      * Get default client when creating a new account in the database
      *
      * @param player player which need a new account
      * @return Client object with default values
      */
-    public abstract Client getDefaultClient(Player player);
+    public static Client getDefaultClient(Player player){
+      return instance.createClient(player);
+    }
+    /**
+     * instance use by {@link #getDefaultClient(Player)}
+     */
+    private static Client instance;
+    /**
+     * Private constructor use by {@link #getDefaultClient(Player)}
+     */
+    private Client(){
+        instance = this;
+    }
 
 }
