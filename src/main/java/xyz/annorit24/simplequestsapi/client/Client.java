@@ -1,5 +1,6 @@
 package xyz.annorit24.simplequestsapi.client;
 
+import org.bukkit.entity.Player;
 import xyz.annorit24.simplequestsapi.quest.QuestInfo;
 
 import java.util.List;
@@ -66,5 +67,13 @@ public abstract class Client {
      * @param questId the target quest's id
      */
     public abstract void removeQuestDone(String questId);
+
+    /**
+     * Get default client when creating a new account in the database
+     *
+     * @param player player which need a new account
+     * @return Client object with default values
+     */
+    public abstract Client getDefaultClient(Player player);
 
 }
