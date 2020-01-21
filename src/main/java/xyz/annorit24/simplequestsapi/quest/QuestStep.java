@@ -1,10 +1,10 @@
 package xyz.annorit24.simplequestsapi.quest;
 
 import org.bukkit.event.Event;
+import xyz.annorit24.simplequestsapi.condition.Condition;
 
 import java.util.Map;
 import java.util.UUID;
-import java.util.concurrent.locks.Condition;
 
 /**
  * @author Annorit24
