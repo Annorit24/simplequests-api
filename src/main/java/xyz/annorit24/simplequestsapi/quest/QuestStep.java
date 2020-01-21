@@ -1,6 +1,7 @@
 package xyz.annorit24.simplequestsapi.quest;
 
 import org.bukkit.event.Event;
+import xyz.annorit24.simplequestsapi.actions.Action;
 import xyz.annorit24.simplequestsapi.condition.Condition;
 
 import java.util.Map;
@@ -48,5 +49,13 @@ public abstract class QuestStep {
      * @return Map of condition with their id
      */
     public abstract Map<Integer, Condition> getConditions();
+
+    /**
+     * Get all actions which will be call.<br>
+     * The key is the order of the actions' call
+     *
+     * @return Map of action with their order
+     */
+    public abstract Map<Integer, Action> getActions();
 
 }
