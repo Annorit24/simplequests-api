@@ -2,11 +2,11 @@ package xyz.annorit24.simplequestsapi.condition;
 
 import org.bukkit.event.Event;
 
-public abstract class AbstractCondition {
+public abstract class Condition {
 
     private Boolean conditionValue;
 
-    public AbstractCondition() {
+    public Condition() {
         this.conditionValue = false;
     }
 
