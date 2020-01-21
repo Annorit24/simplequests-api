@@ -1,6 +1,6 @@
 package xyz.annorit24.simplequestsapi.condition;
 
-import xyz.annorit24.simplequestsapi.client.Client;
+import org.bukkit.event.Event;
 
 public abstract class AbstractCondition {
 
@@ -10,9 +10,9 @@ public abstract class AbstractCondition {
         this.conditionValue = false;
     }
 
-    public abstract void call(Client client);
+    public abstract void call(Event event);
 
-    public abstract void manageInvalidCondition(Client client);
+    public abstract void manageInvalidCondition(Event event);
 
     public Boolean getConditionValue() {
         return conditionValue;
