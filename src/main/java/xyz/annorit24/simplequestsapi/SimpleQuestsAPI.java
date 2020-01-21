@@ -2,6 +2,7 @@ package xyz.annorit24.simplequestsapi;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.annorit24.simplequestsapi.client.ClientManager;
+import xyz.annorit24.simplequestsapi.quest.QuestsManager;
 
 /**
  * @author Annorit24
@@ -53,4 +54,11 @@ public abstract class SimpleQuestsAPI {
      * @return client manager
      */
     public abstract ClientManager getClientManager();
+
+    /**
+     * Get the quests manager use to interact with registered quests
+     *
+     * @return quests manager
+     */
+    public abstract QuestsManager questsManager();
 }
