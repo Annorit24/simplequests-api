@@ -17,4 +17,8 @@ public abstract class Condition {
     public Boolean getConditionValue() {
         return conditionValue;
     }
+
+    public void setConditionValue(Boolean conditionValue) {
+        this.conditionValue = conditionValue;
+    }
 }
