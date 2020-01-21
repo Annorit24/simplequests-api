@@ -4,7 +4,7 @@ import org.bukkit.event.Event;
 
 public abstract class Condition {
 
-    private Boolean conditionValue;
+    protected Boolean conditionValue;
 
     public Condition() {
         this.conditionValue = false;
