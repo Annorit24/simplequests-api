@@ -27,7 +27,7 @@ public abstract class Action {
         this.validConditions = validConditions;
     }
 
-    private boolean isConditionsValid(Map<Integer, Boolean> results){
+    protected boolean isConditionsValid(Map<Integer, Boolean> results){
         for (Map.Entry<Integer, Boolean> entry : results.entrySet()) {
             Integer integer = entry.getKey();
             Boolean aBoolean = entry.getValue();
