@@ -26,4 +26,14 @@ public abstract class Action {
     public void setValidConditions(List<Integer> validConditions) {
         this.validConditions = validConditions;
     }
+
+    private boolean isConditionsValid(Map<Integer, Boolean> results){
+        for (Map.Entry<Integer, Boolean> entry : results.entrySet()) {
+            Integer integer = entry.getKey();
+            Boolean aBoolean = entry.getValue();
+
+            if(validConditions.contains(integer) && !aBoolean)return false;
+        }
+        return true;
+    }
 }
