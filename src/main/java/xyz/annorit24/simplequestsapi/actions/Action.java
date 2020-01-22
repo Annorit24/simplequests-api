@@ -3,6 +3,7 @@ package xyz.annorit24.simplequestsapi.actions;
 import org.bukkit.event.Event;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Annorit24
@@ -16,7 +17,7 @@ public abstract class Action {
         this.validConditions = validConditions;
     }
 
-    public abstract void call(Event event);
+    public abstract void call(Event event, Map<Integer, Boolean> results);
 
     public List<Integer> getValidConditions() {
         return validConditions;
