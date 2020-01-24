@@ -5,4 +5,10 @@ package xyz.annorit24.simplequestsapi.quest;
  * Created on 20/01/2020
  */
 public abstract class QuestStarter {
+
+    /**
+     * Start the quest
+     */
+    public abstract void start();
+
 }
