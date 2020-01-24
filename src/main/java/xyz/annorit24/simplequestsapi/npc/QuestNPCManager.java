@@ -12,4 +12,5 @@ public abstract class QuestNPCManager {
 
     public abstract void asyncSpawnNpc(Player player);
 
+    public abstract QuestNPC getQuestNPC(Integer id);
 }

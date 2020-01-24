@@ -4,6 +4,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import xyz.annorit24.simplequestsapi.actions.Action;
 import xyz.annorit24.simplequestsapi.client.ClientManager;
 import xyz.annorit24.simplequestsapi.condition.Condition;
+import xyz.annorit24.simplequestsapi.npc.QuestNPCManager;
 import xyz.annorit24.simplequestsapi.packet.PacketReaderManager;
 import xyz.annorit24.simplequestsapi.quest.ComponentsManager;
 import xyz.annorit24.simplequestsapi.quest.QuestsManager;
@@ -86,4 +87,11 @@ public abstract class SimpleQuestsAPI {
      * @return packet reader manager
      */
     public abstract PacketReaderManager getPacketReaderManager();
+
+    /**
+     * Get the quest npc manager use to spawn npcs and interact with them
+     *
+     * @return quest npc manager
+     */
+    public abstract QuestNPCManager questNPCManager();
 }
