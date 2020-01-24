@@ -1,7 +1,11 @@
 package xyz.annorit24.simplequestsapi;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import xyz.annorit24.simplequestsapi.actions.Action;
 import xyz.annorit24.simplequestsapi.client.ClientManager;
+import xyz.annorit24.simplequestsapi.condition.Condition;
+import xyz.annorit24.simplequestsapi.packet.PacketReaderManager;
+import xyz.annorit24.simplequestsapi.quest.ComponentsManager;
 import xyz.annorit24.simplequestsapi.quest.QuestsManager;
 
 /**
@@ -61,4 +65,25 @@ public abstract class SimpleQuestsAPI {
      * @return quests manager
      */
     public abstract QuestsManager questsManager();
+
+    /**
+     * Get the action manager use to get registered actions
+     *
+     * @return action manager
+     */
+    public abstract ComponentsManager<Action> getActionsManager();
+
+    /**
+     * Get the condition manager use to get registered conditions
+     *
+     * @return action manager
+     */
+    public abstract ComponentsManager<Condition> getConditionsManager();
+
+    /**
+     * Get the packet reader manager use to get registered packet readers
+     *
+     * @return packet reader manager
+     */
+    public abstract PacketReaderManager getPacketReaderManager();
 }
