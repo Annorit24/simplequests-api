@@ -1,6 +1,6 @@
 package xyz.annorit24.simplequestsapi.quest;
 
-import java.awt.*;
+import org.bukkit.event.Event;
 
 /**
  * @author Annorit24
