@@ -16,10 +16,12 @@ public abstract class Action {
     private List<Integer> validConditions;
     protected QuestStep questStep;
     private boolean customCall;
+    protected boolean finish;
 
     public Action(List<Integer> validConditions, boolean customCall) {
         this.validConditions = validConditions;
         this.customCall = customCall;
+        this.finish = false;
     }
 
     public abstract void call(Player player, Map<Integer, Boolean> results);
@@ -49,5 +51,9 @@ public abstract class Action {
 
     public boolean isCustomCall() {
         return customCall;
+    }
+
+    public boolean isFinish() {
+        return finish;
     }
 }
