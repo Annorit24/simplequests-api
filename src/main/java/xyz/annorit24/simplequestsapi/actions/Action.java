@@ -1,6 +1,7 @@
 package xyz.annorit24.simplequestsapi.actions;
 
 import org.bukkit.event.Event;
+import xyz.annorit24.simplequestsapi.quest.QuestStep;
 
 import java.util.List;
 import java.util.Map;
@@ -12,9 +13,12 @@ import java.util.Map;
 public abstract class Action {
 
     private List<Integer> validConditions;
+    protected QuestStep questStep;
+    private boolean customCall;
 
-    public Action(List<Integer> validConditions) {
+    public Action(List<Integer> validConditions, boolean customCall) {
         this.validConditions = validConditions;
+        this.customCall = customCall;
     }
 
     public abstract void call(Event event, Map<Integer, Boolean> results);
@@ -35,5 +39,14 @@ public abstract class Action {
             if(validConditions.contains(integer) && !aBoolean)return false;
         }
         return true;
+    }
+
+    public QuestStep setQuestStep(QuestStep questStep) {
+        this.questStep = questStep;
+        return questStep;
+    }
+
+    public boolean isCustomCall() {
+        return customCall;
     }
 }
