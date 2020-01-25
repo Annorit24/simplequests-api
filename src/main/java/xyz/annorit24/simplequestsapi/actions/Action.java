@@ -1,5 +1,6 @@
 package xyz.annorit24.simplequestsapi.actions;
 
+import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import xyz.annorit24.simplequestsapi.quest.QuestStep;
 
@@ -21,7 +22,7 @@ public abstract class Action {
         this.customCall = customCall;
     }
 
-    public abstract void call(Event event, Map<Integer, Boolean> results);
+    public abstract void call(Player player, Map<Integer, Boolean> results);
 
     public List<Integer> getValidConditions() {
         return validConditions;
