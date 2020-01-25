@@ -56,4 +56,8 @@ public abstract class Action {
     public boolean isFinish() {
         return finish;
     }
+
+    public void setFinish(boolean finish) {
+        this.finish = finish;
+    }
 }
