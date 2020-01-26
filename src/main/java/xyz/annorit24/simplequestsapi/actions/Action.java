@@ -16,7 +16,7 @@ public abstract class Action {
     private List<Integer> validConditions;
     protected QuestStep questStep;
     private boolean customCall;
-    protected boolean finish;
+    protected volatile boolean finish;
 
     public Action(List<Integer> validConditions, boolean customCall) {
         this.validConditions = validConditions;
@@ -35,6 +35,7 @@ public abstract class Action {
     }
 
     protected boolean isConditionsValid(Map<Integer, Boolean> results){
+        if(results == null)return true;
         for (Map.Entry<Integer, Boolean> entry : results.entrySet()) {
             Integer integer = entry.getKey();
             Boolean aBoolean = entry.getValue();
@@ -53,11 +54,11 @@ public abstract class Action {
         return customCall;
     }
 
-    public boolean isFinish() {
+    public synchronized boolean isFinish() {
         return finish;
     }
 
-    public void setFinish(boolean finish) {
+    public synchronized void setFinish(boolean finish) {
         this.finish = finish;
     }
 }
