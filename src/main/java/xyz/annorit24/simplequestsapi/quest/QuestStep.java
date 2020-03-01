@@ -1,8 +1,8 @@
 package xyz.annorit24.simplequestsapi.quest;
 
 import org.bukkit.event.Event;
-import xyz.annorit24.simplequestsapi.actions.Action;
-import xyz.annorit24.simplequestsapi.condition.Condition;
+import xyz.annorit24.simplequestsapi.quest.components.Action;
+import xyz.annorit24.simplequestsapi.quest.components.Condition;
 
 import java.util.Map;
 import java.util.UUID;
