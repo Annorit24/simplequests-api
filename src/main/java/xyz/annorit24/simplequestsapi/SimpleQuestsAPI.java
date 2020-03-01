@@ -1,13 +1,15 @@
 package xyz.annorit24.simplequestsapi;
 
 import org.bukkit.plugin.java.JavaPlugin;
-import xyz.annorit24.simplequestsapi.actions.Action;
 import xyz.annorit24.simplequestsapi.client.ClientManager;
-import xyz.annorit24.simplequestsapi.condition.Condition;
+import xyz.annorit24.simplequestsapi.pipeline.BukkitEventsData;
+import xyz.annorit24.simplequestsapi.quest.components.Action;
 import xyz.annorit24.simplequestsapi.npc.QuestNPCManager;
 import xyz.annorit24.simplequestsapi.packet.PacketReaderManager;
-import xyz.annorit24.simplequestsapi.quest.ComponentsManager;
+import xyz.annorit24.simplequestsapi.quest.components.ComponentsManager;
 import xyz.annorit24.simplequestsapi.quest.QuestsManager;
+
+import java.util.concurrent.locks.Condition;
 
 /**
  * @author Annorit24
@@ -94,4 +96,11 @@ public abstract class SimpleQuestsAPI {
      * @return quest npc manager
      */
     public abstract QuestNPCManager questNPCManager();
+
+    /**
+     * Get the object use to access to bukkit events data used by the pipeline system
+     *
+     * @return bukkit events data object
+     */
+    public abstract BukkitEventsData getBukkitEventsData();
 }

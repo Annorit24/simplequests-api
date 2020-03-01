@@ -1,4 +1,4 @@
-package xyz.annorit24.simplequestsapi.quest;
+package xyz.annorit24.simplequestsapi.quest.components;
 
 import com.google.gson.GsonBuilder;
 import com.google.gson.TypeAdapter;
