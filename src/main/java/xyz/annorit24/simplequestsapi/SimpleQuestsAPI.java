@@ -8,8 +8,7 @@ import xyz.annorit24.simplequestsapi.npc.QuestNPCManager;
 import xyz.annorit24.simplequestsapi.packet.PacketReaderManager;
 import xyz.annorit24.simplequestsapi.quest.components.ComponentsManager;
 import xyz.annorit24.simplequestsapi.quest.QuestsManager;
-
-import java.util.concurrent.locks.Condition;
+import xyz.annorit24.simplequestsapi.quest.components.Condition;
 
 /**
  * @author Annorit24
