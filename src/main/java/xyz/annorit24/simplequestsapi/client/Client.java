@@ -1,6 +1,7 @@
 package xyz.annorit24.simplequestsapi.client;
 
 import org.bukkit.entity.Player;
+import xyz.annorit24.simplequestsapi.pipeline.Pipeline;
 import xyz.annorit24.simplequestsapi.quest.QuestInfo;
 
 import java.util.List;
@@ -11,6 +12,14 @@ import java.util.UUID;
  * Created on 28/12/2019
  */
 public abstract class Client {
+
+    /**
+     * Get the main pipeline use to process quest step events
+     *
+     * @return pipeline
+     */
+    public abstract Pipeline getMainPipeline();
+
     /**
      * Get the real name of the player
      * @return the real name
