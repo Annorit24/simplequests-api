@@ -88,8 +88,18 @@ public final class QuestEventContainer {
     public boolean isReprocess() {
         return reprocess;
     }
-
     public void setReprocess(boolean reprocess) {
         this.reprocess = reprocess;
+    }
+
+    private boolean isCriticalConditions(){
+        Map<Integer, ComponentResult> conditionsResult = getConditionsResult();
+
+        for (Map.Entry<Integer, ComponentResult> entry : conditionsResult.entrySet()) {
+            ComponentResult componentResult = entry.getValue();
+            if(componentResult == ComponentResult.CRITICAL_FAILURE)return false;
+        }
+        return true;
+
     }
 }
