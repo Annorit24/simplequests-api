@@ -106,7 +106,7 @@ public abstract class Pipeline {
      * @param runner new runner to add
      */
     public synchronized void addLast(Runner runner){
-        runners.put(runners.size()-1, runner.getSlug(), runner);
+        runners.put(runners.size(), runner.getSlug(), runner);
     }
 
     /**
