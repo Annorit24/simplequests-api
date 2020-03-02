@@ -88,4 +88,8 @@ public final class QuestEventContainer {
     public boolean isReprocess() {
         return reprocess;
     }
+
+    public void setReprocess(boolean reprocess) {
+        this.reprocess = reprocess;
+    }
 }
