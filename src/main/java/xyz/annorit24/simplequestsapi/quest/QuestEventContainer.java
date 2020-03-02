@@ -92,7 +92,7 @@ public final class QuestEventContainer {
         this.reprocess = reprocess;
     }
 
-    private boolean isCriticalConditions(){
+    public boolean isCriticalConditions(){
         Map<Integer, ComponentResult> conditionsResult = getConditionsResult();
 
         for (Map.Entry<Integer, ComponentResult> entry : conditionsResult.entrySet()) {
@@ -100,6 +100,5 @@ public final class QuestEventContainer {
             if(componentResult == ComponentResult.CRITICAL_FAILURE)return false;
         }
         return true;
-
     }
 }
