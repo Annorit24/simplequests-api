@@ -1,7 +1,7 @@
 package xyz.annorit24.simplequestsapi.quest.components;
 
 import org.bukkit.entity.Player;
-import xyz.annorit24.simplequestsapi.quest.QuestEventContainer;
+import xyz.annorit24.simplequestsapi.quest.Container;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,14 +14,14 @@ public final class ActionParameter implements Component.ComponentParameter {
 
     private Player player;
     private Map<Integer, Boolean> conditionsResults;
-    private QuestEventContainer container;
+    private Container container;
 
     public ActionParameter setPlayer(Player player) {
         this.player = player;
         return this;
     }
 
-    public ActionParameter setContainer(QuestEventContainer container) {
+    public ActionParameter setContainer(Container container) {
         this.container = container;
         return this;
     }
@@ -52,7 +52,7 @@ public final class ActionParameter implements Component.ComponentParameter {
     public Map<Integer, Boolean> getConditionsResults() {
         return conditionsResults;
     }
-    public QuestEventContainer getContainer() {
+    public Container getContainer() {
         return container;
     }
 }

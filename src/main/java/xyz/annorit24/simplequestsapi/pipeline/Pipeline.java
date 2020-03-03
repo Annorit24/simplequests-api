@@ -1,7 +1,7 @@
 package xyz.annorit24.simplequestsapi.pipeline;
 
 import org.apache.commons.collections4.map.ListOrderedMap;
-import xyz.annorit24.simplequestsapi.quest.QuestEventContainer;
+import xyz.annorit24.simplequestsapi.quest.Container;
 import xyz.annorit24.simplequestsapi.utils.Callback;
 import xyz.annorit24.simplequestsapi.utils.logger.LogUtils;
 
@@ -130,7 +130,7 @@ public abstract class Pipeline {
      *
      * @param container container of the quest event
      */
-    public synchronized void send(QuestEventContainer container){
+    public synchronized void send(Container container){
         LogUtils.DEBUG.log("201");
         pipelineManager.submitPipelineJob(() -> {
             LogUtils.DEBUG.log("202");

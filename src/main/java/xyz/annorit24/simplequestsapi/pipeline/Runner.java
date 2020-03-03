@@ -1,6 +1,6 @@
 package xyz.annorit24.simplequestsapi.pipeline;
 
-import xyz.annorit24.simplequestsapi.quest.QuestEventContainer;
+import xyz.annorit24.simplequestsapi.quest.Container;
 import xyz.annorit24.simplequestsapi.utils.Callback;
 
 /**
@@ -18,7 +18,7 @@ public abstract class Runner implements IQuestEventReader {
     }
 
     @Override
-    public Callback read(QuestEventContainer container) {
+    public Callback read(Container container) {
         process(container);
         return () -> {
             Integer i = container.getIndexPosition();
@@ -31,7 +31,7 @@ public abstract class Runner implements IQuestEventReader {
         };
     }
 
-    protected abstract void process(QuestEventContainer container);
+    protected abstract void process(Container container);
 
     public String getSlug() {
         return slug;

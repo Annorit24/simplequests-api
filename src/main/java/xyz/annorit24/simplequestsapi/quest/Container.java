@@ -1,6 +1,5 @@
 package xyz.annorit24.simplequestsapi.quest;
 
-import xyz.annorit24.simplequestsapi.pipeline.Trigger;
 import xyz.annorit24.simplequestsapi.quest.components.Action;
 import xyz.annorit24.simplequestsapi.quest.components.ComponentResult;
 import xyz.annorit24.simplequestsapi.quest.components.Condition;
@@ -12,13 +11,11 @@ import java.util.UUID;
  * @author Annorit24
  * Created on 04/02/2020
  */
-public final class QuestEventContainer {
+public abstract class Container {
     // TODO: 01/03/2020 javadoc ...
 
     private UUID playerUUID;
     private UUID bukkitEventUUID;
-
-    private Trigger processingTrigger;
 
     private volatile Map<Integer, Action> actions;
     private volatile Map<Integer, ComponentResult> actionsResult;
@@ -33,13 +30,11 @@ public final class QuestEventContainer {
      */
     private Integer indexPosition;
 
-    public QuestEventContainer(UUID playerUUID, UUID bukkitEventUUID, Trigger processingTrigger) {
+    public Container(UUID playerUUID, UUID bukkitEventUUID, Map<Integer, Action> actions, Map<Integer, Condition> conditions) {
         this.playerUUID = playerUUID;
         this.bukkitEventUUID = bukkitEventUUID;
-
-        this.processingTrigger = processingTrigger;
-        this.actions = processingTrigger.getActions();
-        this.conditions = processingTrigger.getConditions();
+        this.actions = actions;
+        this.conditions = conditions;
 
         //default values
         this.reprocess = true;
@@ -79,10 +74,6 @@ public final class QuestEventContainer {
 
     public UUID getBukkitEventUUID() {
         return bukkitEventUUID;
-    }
-
-    public Trigger getProcessingTrigger() {
-        return processingTrigger;
     }
 
     public boolean isReprocess() {

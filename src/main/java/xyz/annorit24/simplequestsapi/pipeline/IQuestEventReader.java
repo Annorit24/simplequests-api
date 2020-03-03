@@ -1,6 +1,6 @@
 package xyz.annorit24.simplequestsapi.pipeline;
 
-import xyz.annorit24.simplequestsapi.quest.QuestEventContainer;
+import xyz.annorit24.simplequestsapi.quest.Container;
 import xyz.annorit24.simplequestsapi.utils.Callback;
 
 /**
@@ -9,6 +9,6 @@ import xyz.annorit24.simplequestsapi.utils.Callback;
  */
 public interface IQuestEventReader {
 
-    Callback read(QuestEventContainer container);
+    Callback read(Container container);
 
 }
