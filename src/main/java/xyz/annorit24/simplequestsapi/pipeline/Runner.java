@@ -22,11 +22,15 @@ public abstract class Runner implements IQuestEventReader {
         process(container);
         return () -> {
             Integer i = container.getIndexPosition();
+            System.out.println(i);
+            i++;
+            container.setIndexPosition(i);
 
-            Callback c = pipeline.getRunners().getValue(i++).read(container);
+            Callback c = pipeline.getRunners().getValue(i).read(container);
             c.run();
 
-            container.setIndexPosition(i);
+            System.out.println(i);
+
             return null;
         };
     }
