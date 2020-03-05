@@ -2,6 +2,7 @@ package xyz.annorit24.simplequestsapi.client;
 
 import org.bukkit.entity.Player;
 import xyz.annorit24.simplequestsapi.pipeline.Pipeline;
+import xyz.annorit24.simplequestsapi.pipeline.PipelineType;
 import xyz.annorit24.simplequestsapi.quest.QuestInfo;
 
 import java.util.List;
@@ -14,11 +15,22 @@ import java.util.UUID;
 public abstract class Client {
 
     /**
-     * Get the main pipeline use to process quest step events
+     * Get pipeline use to process a container
      *
+     * @param type the type name of needed pipeline
      * @return pipeline
      */
-    public abstract Pipeline getMainPipeline();
+    public abstract Pipeline getPipeline(String type);
+
+    /**
+     * Get the pipeline use to process a container
+     *
+     * @param type the type of needed pipeline
+     * @return pipeline
+     */
+    public Pipeline getPipeline(PipelineType type){
+        return getPipeline(type.getName());
+    }
 
     /**
      * Get the real name of the player
