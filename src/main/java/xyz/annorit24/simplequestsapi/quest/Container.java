@@ -88,8 +88,8 @@ public abstract class Container {
 
         for (Map.Entry<Integer, ComponentResult> entry : conditionsResult.entrySet()) {
             ComponentResult componentResult = entry.getValue();
-            if(componentResult == ComponentResult.CRITICAL_FAILURE)return false;
+            if(componentResult == ComponentResult.CRITICAL_FAILURE)return true;
         }
-        return true;
+        return false;
     }
 }
