@@ -137,7 +137,7 @@ public abstract class Pipeline {
             Callback c = runners.getValue(0).read(container);
             LogUtils.DEBUG.log("203");
             c.run();
-            LogUtils.DEBUG.log("204");
+            LogUtils.DEBUG.log("204"); //Le 204 ne passe pas dans la console peut-etre problème dans le callback, test avec msg de debug
             return null;
         },container.getPlayerUUID());
 

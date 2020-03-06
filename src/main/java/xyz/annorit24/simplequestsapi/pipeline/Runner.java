@@ -19,7 +19,9 @@ public abstract class Runner implements IQuestEventReader {
 
     @Override
     public Callback read(Container container) {
+        System.out.println("PROCESS BEFORE");
         process(container);
+        System.out.println("PROCESS AFTER");
         return () -> {
             Integer i = container.getIndexPosition();
             System.out.println(i);
@@ -27,6 +29,8 @@ public abstract class Runner implements IQuestEventReader {
             container.setIndexPosition(i);
 
             Callback c = pipeline.getRunners().getValue(i).read(container);
+            Runner runner = pipeline.getRunners().getValue(i);
+            System.out.println(runner.slug);
             c.run();
 
             System.out.println(i);
