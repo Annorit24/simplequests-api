@@ -28,8 +28,9 @@ public abstract class Runner implements IQuestEventReader {
             i++;
             container.setIndexPosition(i);
 
-            Callback c = pipeline.getRunners().getValue(i).read(container);
             Runner runner = pipeline.getRunners().getValue(i);
+            if(runner == null)return null;
+            Callback c = runner.read(container);
             System.out.println(runner.getSlug());
             c.run();
 
