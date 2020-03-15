@@ -13,19 +13,22 @@ import java.util.UUID;
  */
 public final class BukkitEventsData {
 
-    private Map<UUID, Event> eventsData;
+    private volatile Map<UUID, Event> eventsData;
 
     public BukkitEventsData() {
         eventsData = new HashMap<>();
     }
 
     public UUID addData(Event event){
+        System.out.println(Thread.currentThread().getName());
         UUID uuid = UUID.randomUUID();
         eventsData.put(uuid, event);
         return uuid;
     }
 
     public Event getData(UUID uuid){
+        System.out.println(Thread.currentThread().getName());
+
         if(!eventsData.containsKey(uuid)){
             LogUtils.ERROR.log("Could not retrieve data for the event id : "+uuid);
             return null;
