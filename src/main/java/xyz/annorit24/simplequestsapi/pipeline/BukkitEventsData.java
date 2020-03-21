@@ -13,7 +13,7 @@ import java.util.UUID;
  */
 public final class BukkitEventsData {
 
-    private volatile Map<UUID, Event> eventsData;
+    private final Map<UUID, Event> eventsData;
 
     public BukkitEventsData() {
         eventsData = new HashMap<>();

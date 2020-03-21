@@ -25,6 +25,10 @@ public final class ConditionParameter implements Component.ComponentParameter {
         return this;
     }
 
+    public UUID getBukkitEventId() {
+        return bukkitEventId;
+    }
+
     public Event getBukkitEvent() {
         return SimpleQuestsAPI.get().getBukkitEventsData().getData(bukkitEventId);
     }
