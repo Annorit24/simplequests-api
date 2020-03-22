@@ -1,6 +1,6 @@
 package xyz.annorit24.simplequestsapi.quest.components;
 
-import org.bukkit.entity.Player;
+import java.util.UUID;
 
 /**
  * @author Annorit24
@@ -8,6 +8,6 @@ import org.bukkit.entity.Player;
  */
 public interface Revertible {
 
-    void revert(Player player);
+    void revert(UUID playerUUID);
 
 }
