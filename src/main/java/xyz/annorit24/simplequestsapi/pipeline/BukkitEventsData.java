@@ -33,6 +33,7 @@ public final class BukkitEventsData {
             LogUtils.ERROR.log("Could not retrieve data for the event id : "+uuid);
             return null;
         }
+        
         return eventsData.get(uuid);
     }
 
