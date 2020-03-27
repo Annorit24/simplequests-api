@@ -10,8 +10,6 @@ public interface Component<T>{
 
     Callback<ComponentResult> call(T parameter);
 
-    T cloneComponent();
-
     public interface ComponentParameter {
     }
 

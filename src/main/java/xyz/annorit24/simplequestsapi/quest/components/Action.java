@@ -63,4 +63,6 @@ public abstract class Action implements Component<ActionParameter> {
     public boolean isCritical() {
         return critical;
     }
+
+    public abstract Action cloneAction();
 }
