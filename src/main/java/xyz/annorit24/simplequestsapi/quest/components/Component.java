@@ -12,4 +12,7 @@ public interface Component<T>{
 
     T cloneComponent();
 
+    public interface ComponentParameter {
+    }
+
 }
