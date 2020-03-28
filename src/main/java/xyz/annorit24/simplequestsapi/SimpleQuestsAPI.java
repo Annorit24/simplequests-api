@@ -2,6 +2,7 @@ package xyz.annorit24.simplequestsapi;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.annorit24.simplequestsapi.client.ClientManager;
+import xyz.annorit24.simplequestsapi.npc.NPCStartManager;
 import xyz.annorit24.simplequestsapi.pipeline.BukkitEventsData;
 import xyz.annorit24.simplequestsapi.quest.components.Action;
 import xyz.annorit24.simplequestsapi.npc.QuestNPCManager;
@@ -102,4 +103,11 @@ public abstract class SimpleQuestsAPI {
      * @return bukkit events data object
      */
     public abstract BukkitEventsData getBukkitEventsData();
+
+    /**
+     * Get the npc start manager use to register quest start npc manager
+     *
+     * @return npc manager
+     */
+    public abstract NPCStartManager npcStartManager();
 }
