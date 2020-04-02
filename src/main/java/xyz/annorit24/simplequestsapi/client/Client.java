@@ -1,11 +1,13 @@
 package xyz.annorit24.simplequestsapi.client;
 
 import org.bukkit.entity.Player;
+import xyz.annorit24.simplequestsapi.customdata.CustomData;
 import xyz.annorit24.simplequestsapi.pipeline.Pipeline;
 import xyz.annorit24.simplequestsapi.pipeline.PipelineType;
 import xyz.annorit24.simplequestsapi.quest.QuestInfo;
 
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -90,6 +92,37 @@ public abstract class Client {
     public abstract void removeQuestDone(String questId);
 
     /**
+     * Update the value of a custom data
+     *
+     * @param key the key to identify the custom data
+     * @param value the value of the custom data
+     */
+    public abstract void updateCustomData(String key, Object value);
+
+    /**
+     * Get the custom data object
+     *
+     * @param key the key of the custom data
+     * @return custom data object
+     */
+    public abstract CustomData getCustomData(String key);
+
+    /**
+     * Get the custom data value
+     *
+     * @param key the key of the custom data object
+     * @return return the value as object
+     */
+    public abstract Object getCustomDataValue(String key);
+
+    /**
+     * Get all custom datas of a player
+     *
+     * @return Map with the key of the custom data as key and the custom data object as value
+     */
+    public abstract Map<String, CustomData> getCustomDatas();
+
+    /**
      * create default client when creating a new account in the database
      *
      * @param player player which need a new account
@@ -106,10 +139,12 @@ public abstract class Client {
     public static Client getDefaultClient(Player player){
       return instance.createClient(player);
     }
+
     /**
      * instance use by {@link #getDefaultClient(Player)}
      */
     private static Client instance;
+
     /**
      * Private constructor use by {@link #getDefaultClient(Player)}
      */
