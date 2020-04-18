@@ -83,8 +83,18 @@ public abstract class Container {
         this.reprocess = reprocess;
     }
 
-    public boolean isCriticalConditions(){
+    public boolean isCriticalConditionsResult(){
         Map<Integer, ComponentResult> conditionsResult = getConditionsResult();
+
+        for (Map.Entry<Integer, ComponentResult> entry : conditionsResult.entrySet()) {
+            ComponentResult componentResult = entry.getValue();
+            if(componentResult == ComponentResult.CRITICAL_FAILURE)return true;
+        }
+        return false;
+    }
+
+    public boolean isCriticalActionsResult(){
+        Map<Integer, ComponentResult> conditionsResult = getActionsResult();
 
         for (Map.Entry<Integer, ComponentResult> entry : conditionsResult.entrySet()) {
             ComponentResult componentResult = entry.getValue();
