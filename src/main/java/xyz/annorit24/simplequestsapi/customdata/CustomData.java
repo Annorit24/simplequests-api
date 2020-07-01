@@ -17,7 +17,6 @@ public abstract class CustomData {
     public abstract Boolean getAsBoolean();
 
     public abstract Boolean isPersistent();
-    public abstract Boolean doesChange();
 
     public abstract void updateValue(Object o);
 
