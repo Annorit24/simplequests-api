@@ -76,30 +76,20 @@ dependencies {
     compile 'org.apache.commons:commons-collections4:4.1'
 }
 
-task ('publishProd'){
-    publishProd.finalizedBy publish
-    repositoryName = "annorit24-prod"
+task ('simplepublish'){
+    simplepublish.finalizedBy publish
 
     if (project.hasProperty('pswd')) {
         mypass = pswd
     }
 }
 
-task ('publishDev'){
-    publishDev.finalizedBy publish
-    repositoryName = "annorit24-dev"
-
-    if (project.hasProperty('pswd')) {
-        mypass = pswd
-    }
-}
-
-/*publishing {
+publishing {
     repositories {
         maven {
-            url 'http://nexus.annorit24.xyz/repository/'+repositoryName+"/"
+            url 'https://repo.repsy.io/mvn/annorit24/default'
             credentials {
-                username 'nx-contributor'
+                username 'annorit24'
                 password mypass
             }
         }
@@ -107,26 +97,6 @@ task ('publishDev'){
     publications {
         mavenJava(MavenPublication) {
             from components.java
-        }
-    }
-}*/
-
-publishing {
-    publications {
-        library(MavenPublication) {
-            from components.java
-        }
-    }
-    repositories {
-        maven {
-            url "https://gitlab.com/api/v4/projects/18433336/packages/maven"
-            credentials(HttpHeaderCredentials) {
-                name = "Private-Token"
-                value = "pRCgq2JsQYmd6fWfesci" // the variable resides in ~/.gradle/gradle.properties
-            }
-            authentication {
-                header(HttpHeaderAuthentication)
-            }
         }
     }
 }
