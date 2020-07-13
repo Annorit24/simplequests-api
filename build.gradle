@@ -94,7 +94,7 @@ task ('publishDev'){
     }
 }
 
-publishing {
+/*publishing {
     repositories {
         maven {
             url 'http://nexus.annorit24.xyz/repository/'+repositoryName+"/"
@@ -107,6 +107,26 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             from components.java
+        }
+    }
+}*/
+
+publishing {
+    publications {
+        library(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            url "https://gitlab.com/api/v4/projects/18433336/packages/maven"
+            credentials(HttpHeaderCredentials) {
+                name = "Private-Token"
+                value = "pRCgq2JsQYmd6fWfesci" // the variable resides in ~/.gradle/gradle.properties
+            }
+            authentication {
+                header(HttpHeaderAuthentication)
+            }
         }
     }
 }
